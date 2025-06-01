@@ -1,6 +1,6 @@
-# MetaVision - Advanced Image Analysis Tool
+# ExifGeek - Advanced Image Analysis Tool
 
-MetaVision is a powerful web-based image analysis tool that provides detailed metadata extraction, color analysis, face detection, and quality metrics for your images. Built with modern web technologies, it offers a sleek and intuitive interface for analyzing your images.
+ExifGeek is a powerful web-based image analysis tool that provides detailed metadata extraction, color analysis, face detection, and quality metrics for your images.
 
 ## 🌟 Features
 
@@ -14,7 +14,6 @@ MetaVision is a powerful web-based image analysis tool that provides detailed me
 - **Modern Design**: Clean and intuitive interface with smooth animations
 - **Theme Support**: Light, Dark, Red, and Dark Red themes
 - **Responsive Layout**: Works seamlessly on desktop and mobile devices
-- **Interactive Tutorial**: Step-by-step guide for new users
 
 ### 🔧 Advanced Features
 - **History Management**: Track and manage your analysis history
@@ -25,16 +24,16 @@ MetaVision is a powerful web-based image analysis tool that provides detailed me
 ## 🚀 Getting Started
 
 ### Live Demo
-Visit the [live demo](https://securitygeek.github.io/metavision) to try MetaVision online.
+Visit the [live demo](https://securitygeek.github.io/exifgeek) to try ExifGeek online.
 
 ### Local Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/securitygeek/metavision.git
+   git clone https://github.com/securitygeek/exifgeek.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd metavision
+   cd exifgeek
    ```
 3. Open `index.html` in your web browser or use a local server:
    ```bash
@@ -94,7 +93,7 @@ Note: Face detection is only available in Chrome and Edge browsers.
 
 ## 📱 Responsive Design
 
-MetaVision is fully responsive and works on:
+ExifGeek is fully responsive and works on:
 - Desktop computers
 - Tablets
 - Mobile phones
@@ -118,27 +117,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 🙏 Acknowledgments
 
-- [EXIF.js](https://github.com/exif-js/exif-js) for metadata extraction
-- [Font Awesome](https://fontawesome.com/) for icons
-- [Google Fonts](https://fonts.google.com/) for typography
-
-## 📞 Support
-
-If you encounter any issues or have questions, please:
-1. Check the [Issues](https://github.com/securitygeek/metavision/issues) page
-2. Create a new issue if your problem isn't already listed
-
-## 🔮 Future Plans
-
-- [ ] Batch processing support
-- [ ] More advanced image analysis
-- [ ] Custom theme creation
-- [ ] Plugin system
-- [ ] API integration
-
----
 
 Made with ❤️ by securitygeek
 

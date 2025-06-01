@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
         loader.innerHTML = `
             <div class="loader-content">
                 <div class="loader-spinner"></div>
-                <h2>MetaVision</h2>
+                <h2>ExifGeek</h2>
                 <p>Loading your image analysis tool...</p>
             </div>
         `;
@@ -1075,7 +1075,7 @@ document.addEventListener('DOMContentLoaded', function () {
         aboutDialog.className = 'about-dialog';
         aboutDialog.innerHTML = `
             <div class="about-content">
-                <h2>MetaVision</h2>
+                <h2>ExifGeek</h2>
                 <p>Advanced Image Analysis Tool</p>
                 <p>Version 1.0.0</p>
                 <button class="action-btn" onclick="this.parentElement.parentElement.remove()">Close</button>
