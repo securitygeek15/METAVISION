@@ -1595,4 +1595,204 @@ body {
     .filter-group {
         width: 100%;
     }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .logo {
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .nav-items {
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 0.5rem;
+    }
+
+    .nav-group {
+        position: relative;
+    }
+
+    .nav-item {
+        padding: 0.5rem;
+    }
+
+    .nav-item span {
+        display: none;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 200px;
+        z-index: 1000;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    .analysis-container {
+        flex-direction: column;
+    }
+
+    .image-preview-container {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .metadata-container {
+        width: 100%;
+    }
+
+    .analysis-tabs {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .analysis-tab {
+        flex: 1 1 calc(50% - 0.5rem);
+        min-width: 120px;
+    }
+
+    .history-filters {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .filter-group {
+        width: 100%;
+    }
+
+    .history-list {
+        grid-template-columns: 1fr;
+    }
+
+    .settings-container {
+        padding: 1rem;
+    }
+
+    .setting-item {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .settings-input {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-items {
+        flex-wrap: wrap;
+    }
+
+    .nav-group {
+        flex: 1 1 50%;
+    }
+
+    .analysis-tab {
+        flex: 1 1 100%;
+    }
+
+    .metadata-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .metadata-item {
+        padding: 0.75rem;
+    }
+
+    .toast {
+        width: 90%;
+        left: 5%;
+    }
+
+    .upload-area {
+        padding: 1rem;
+    }
+
+    .upload-content i {
+        font-size: 2rem;
+    }
+
+    .upload-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .upload-content p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Fix for dropdown menus on mobile */
+@media (hover: none) {
+    .nav-group:hover .dropdown-menu {
+        display: none;
+    }
+
+    .nav-group.active .dropdown-menu {
+        display: block;
+    }
+}
+
+/* Fix for touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .nav-item,
+    .dropdown-item,
+    .action-btn,
+    .metadata-item,
+    .analysis-tab {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .nav-item:active,
+    .dropdown-item:active,
+    .action-btn:active,
+    .metadata-item:active,
+    .analysis-tab:active {
+        opacity: 0.7;
+        transform: scale(0.98);
+    }
+}
+
+/* Touch feedback styles */
+.touch-active {
+    opacity: 0.7;
+    transform: scale(0.98);
+}
+
+/* Improve touch targets */
+@media (hover: none) and (pointer: coarse) {
+    .nav-item,
+    .dropdown-item,
+    .action-btn,
+    .metadata-item,
+    .analysis-tab {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .nav-item:active,
+    .dropdown-item:active,
+    .action-btn:active,
+    .metadata-item:active,
+    .analysis-tab:active {
+        opacity: 0.7;
+        transform: scale(0.98);
+    }
 } 

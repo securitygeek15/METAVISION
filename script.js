@@ -1084,6 +1084,53 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.appendChild(aboutDialog);
     }
 
+    // Mobile navigation handling
+    function setupMobileNav() {
+        const navGroups = document.querySelectorAll('.nav-group');
+        
+        navGroups.forEach(group => {
+            const navItem = group.querySelector('.nav-item');
+            
+            navItem.addEventListener('click', (e) => {
+                // Close other dropdowns
+                navGroups.forEach(otherGroup => {
+                    if (otherGroup !== group) {
+                        otherGroup.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current dropdown
+                group.classList.toggle('active');
+                e.stopPropagation();
+            });
+        });
+        
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', () => {
+            navGroups.forEach(group => {
+                group.classList.remove('active');
+            });
+        });
+    }
+
+    // Initialize mobile features
+    function initMobileFeatures() {
+        setupMobileNav();
+        
+        // Add touch feedback
+        const touchElements = document.querySelectorAll('.nav-item, .dropdown-item, .action-btn, .metadata-item');
+        touchElements.forEach(element => {
+            element.addEventListener('touchstart', () => {
+                element.classList.add('touch-active');
+            });
+            
+            element.addEventListener('touchend', () => {
+                element.classList.remove('touch-active');
+            });
+        });
+    }
+
     // Initialize the app
     init();
+    initMobileFeatures();
 }); 
