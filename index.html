@@ -11,41 +11,47 @@
 </head>
 <body>
     <div class="app-container">
-        <nav class="sidebar">
+        <!-- Mobile Header -->
+        <header class="mobile-header">
             <div class="logo">
                 <i class="fas fa-camera-retro"></i>
                 <span>ExifGeek</span>
             </div>
-            <div class="nav-items">
-                <div class="more-menu">
-                    <button class="nav-item" id="moreMenuBtn">
-                        <i class="fas fa-ellipsis-v"></i>
-                        <span>More</span>
-                    </button>
-                    <div class="dropdown-menu">
-                        <button class="dropdown-item" data-view="extract">
-                            <i class="fas fa-file-import"></i>
-                            Extract
-                        </button>
-                        <button class="dropdown-item" data-view="history">
-                            <i class="fas fa-history"></i>
-                            History
-                        </button>
-                        <button class="dropdown-item" data-view="settings">
-                            <i class="fas fa-cog"></i>
-                            Settings
-                        </button>
-                        <button class="dropdown-item" data-action="about">
-                            <i class="fas fa-info-circle"></i>
-                            About
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </nav>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </header>
 
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo desktop-only">
+                <i class="fas fa-camera-retro"></i>
+                <span>ExifGeek</span>
+            </div>
+            <nav class="nav-menu">
+                <button class="nav-item active" data-view="extract">
+                    <i class="fas fa-file-import"></i>
+                    <span>Extract</span>
+                </button>
+                <button class="nav-item" data-view="history">
+                    <i class="fas fa-history"></i>
+                    <span>History</span>
+                </button>
+                <button class="nav-item" data-view="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </button>
+                <button class="nav-item" data-action="about">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </button>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
         <main class="main-content">
-            <div class="view-container" id="extract-view">
+            <!-- Extract View -->
+            <div class="view-container active" id="extract-view">
                 <div class="upload-container">
                     <div class="upload-area" id="uploadArea">
                         <div class="upload-content">
@@ -147,7 +153,8 @@
                 </div>
             </div>
 
-            <div class="view-container hidden" id="history-view">
+            <!-- History View -->
+            <div class="view-container" id="history-view">
                 <div class="history-container">
                     <div class="history-header">
                         <h2>Analysis History</h2>
@@ -193,7 +200,8 @@
                 </div>
             </div>
 
-            <div class="view-container hidden" id="settings-view">
+            <!-- Settings View -->
+            <div class="view-container" id="settings-view">
                 <div class="settings-container">
                     <h2>Settings</h2>
                     <div class="settings-group">

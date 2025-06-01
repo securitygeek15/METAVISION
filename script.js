@@ -1086,27 +1086,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Mobile Navigation Setup
     function setupMobileNav() {
-        const moreMenu = document.querySelector('.more-menu');
-        const dropdownMenu = moreMenu.querySelector('.dropdown-menu');
-        const dropdownItems = dropdownMenu.querySelectorAll('.dropdown-item');
-
-        // Toggle dropdown on click
-        moreMenu.addEventListener('click', (e) => {
-            e.stopPropagation();
-            moreMenu.classList.toggle('active');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        const navItems = document.querySelectorAll('.nav-item');
+        
+        // Toggle sidebar on menu button click
+        menuToggle?.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
         });
-
-        // Close dropdown when clicking outside
+        
+        // Close sidebar when clicking outside on mobile
         document.addEventListener('click', (e) => {
-            if (!moreMenu.contains(e.target)) {
-                moreMenu.classList.remove('active');
+            if (window.innerWidth < 768 && 
+                !sidebar.contains(e.target) && 
+                !menuToggle.contains(e.target) && 
+                sidebar.classList.contains('active')) {
+                sidebar.classList.remove('active');
             }
         });
-
-        // Handle dropdown item clicks
-        dropdownItems.forEach(item => {
+        
+        // Handle navigation item clicks
+        navItems.forEach(item => {
             item.addEventListener('click', () => {
-                moreMenu.classList.remove('active');
+                // Remove active class from all items
+                navItems.forEach(navItem => navItem.classList.remove('active'));
+                // Add active class to clicked item
+                item.classList.add('active');
+                
+                // Close sidebar on mobile after selection
+                if (window.innerWidth < 768) {
+                    sidebar.classList.remove('active');
+                }
             });
         });
     }
