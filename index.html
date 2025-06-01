@@ -17,54 +17,23 @@
                 <span>ExifGeek</span>
             </div>
             <div class="nav-items">
-                <div class="nav-group">
-                    <button class="nav-item active" data-view="extract">
-                        <i class="fas fa-file-import"></i>
-                        <span>Extract</span>
-                        <i class="fas fa-chevron-down dropdown-icon"></i>
+                <button class="nav-item active" data-view="extract">
+                    <i class="fas fa-file-import"></i>
+                    <span>Extract</span>
+                </button>
+                <div class="more-menu">
+                    <button class="nav-item" id="moreMenuBtn">
+                        <i class="fas fa-ellipsis-v"></i>
+                        <span>More</span>
                     </button>
                     <div class="dropdown-menu">
-                        <button class="dropdown-item" data-action="upload">
-                            <i class="fas fa-upload"></i>
-                            Upload Image
+                        <button class="dropdown-item" data-view="history">
+                            <i class="fas fa-history"></i>
+                            History
                         </button>
-                        <button class="dropdown-item" data-action="camera">
-                            <i class="fas fa-camera"></i>
-                            Take Photo
-                        </button>
-                        <button class="dropdown-item" data-action="paste">
-                            <i class="fas fa-paste"></i>
-                            Paste Image
-                        </button>
-                    </div>
-                </div>
-                <div class="nav-group">
-                    <button class="nav-item" data-view="history">
-                        <i class="fas fa-history"></i>
-                        <span>History</span>
-                        <i class="fas fa-chevron-down dropdown-icon"></i>
-                    </button>
-                    <div class="dropdown-menu">
-                        <button class="dropdown-item" data-action="clear-history">
-                            <i class="fas fa-trash"></i>
-                            Clear History
-                        </button>
-                        <button class="dropdown-item" data-action="export-history">
-                            <i class="fas fa-file-export"></i>
-                            Export History
-                        </button>
-                    </div>
-                </div>
-                <div class="nav-group">
-                    <button class="nav-item" data-view="settings">
-                        <i class="fas fa-cog"></i>
-                        <span>Settings</span>
-                        <i class="fas fa-chevron-down dropdown-icon"></i>
-                    </button>
-                    <div class="dropdown-menu">
-                        <button class="dropdown-item" data-action="reset-settings">
-                            <i class="fas fa-undo"></i>
-                            Reset Settings
+                        <button class="dropdown-item" data-view="settings">
+                            <i class="fas fa-cog"></i>
+                            Settings
                         </button>
                         <button class="dropdown-item" data-action="about">
                             <i class="fas fa-info-circle"></i>

@@ -1084,31 +1084,29 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.appendChild(aboutDialog);
     }
 
-    // Mobile navigation handling
+    // Mobile Navigation Setup
     function setupMobileNav() {
-        const navGroups = document.querySelectorAll('.nav-group');
-        
-        navGroups.forEach(group => {
-            const navItem = group.querySelector('.nav-item');
-            
-            navItem.addEventListener('click', (e) => {
-                // Close other dropdowns
-                navGroups.forEach(otherGroup => {
-                    if (otherGroup !== group) {
-                        otherGroup.classList.remove('active');
-                    }
-                });
-                
-                // Toggle current dropdown
-                group.classList.toggle('active');
-                e.stopPropagation();
-            });
+        const moreMenu = document.querySelector('.more-menu');
+        const dropdownMenu = moreMenu.querySelector('.dropdown-menu');
+        const dropdownItems = dropdownMenu.querySelectorAll('.dropdown-item');
+
+        // Toggle dropdown on click
+        moreMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
+            moreMenu.classList.toggle('active');
         });
-        
-        // Close dropdowns when clicking outside
-        document.addEventListener('click', () => {
-            navGroups.forEach(group => {
-                group.classList.remove('active');
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!moreMenu.contains(e.target)) {
+                moreMenu.classList.remove('active');
+            }
+        });
+
+        // Handle dropdown item clicks
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', () => {
+                moreMenu.classList.remove('active');
             });
         });
     }
@@ -1117,8 +1115,8 @@ document.addEventListener('DOMContentLoaded', function () {
     function initMobileFeatures() {
         setupMobileNav();
         
-        // Add touch feedback
-        const touchElements = document.querySelectorAll('.nav-item, .dropdown-item, .action-btn, .metadata-item');
+        // Add touch feedback to interactive elements
+        const touchElements = document.querySelectorAll('.nav-item, .dropdown-item, .action-btn');
         touchElements.forEach(element => {
             element.addEventListener('touchstart', () => {
                 element.classList.add('touch-active');
