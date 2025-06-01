@@ -1,7 +1,5 @@
 # MetaVision - Advanced Image Analysis Tool
 
-![MetaVision Screenshot](screenshot.png)
-
 MetaVision is a powerful web-based image analysis tool that provides detailed metadata extraction, color analysis, face detection, and quality metrics for your images. Built with modern web technologies, it offers a sleek and intuitive interface for analyzing your images.
 
 ## 🌟 Features
@@ -27,12 +25,12 @@ MetaVision is a powerful web-based image analysis tool that provides detailed me
 ## 🚀 Getting Started
 
 ### Live Demo
-Visit the [live demo](https://your-github-username.github.io/metavision) to try MetaVision online.
+Visit the [live demo](https://securitygeek.github.io/metavision) to try MetaVision online.
 
 ### Local Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/metavision.git
+   git clone https://github.com/securitygeek/metavision.git
    ```
 2. Navigate to the project directory:
    ```bash
@@ -120,10 +118,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 🙏 Acknowledgments
 
 - [EXIF.js](https://github.com/exif-js/exif-js) for metadata extraction
@@ -133,7 +127,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 If you encounter any issues or have questions, please:
-1. Check the [Issues](https://github.com/your-username/metavision/issues) page
+1. Check the [Issues](https://github.com/securitygeek/metavision/issues) page
 2. Create a new issue if your problem isn't already listed
 
 ## 🔮 Future Plans
@@ -146,9 +140,5 @@ If you encounter any issues or have questions, please:
 
 ---
 
-Made with ❤️ by [Your Name]
+Made with ❤️ by securitygeek
 
-[![GitHub stars](https://img.shields.io/github/stars/your-username/metavision?style=social)](https://github.com/your-username/metavision/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/your-username/metavision?style=social)](https://github.com/your-username/metavision/network/members)
-[![GitHub issues](https://img.shields.io/github/issues/your-username/metavision)](https://github.com/your-username/metavision/issues)
-[![GitHub license](https://img.shields.io/github/license/your-username/metavision)](https://github.com/your-username/metavision/blob/main/LICENSE) 
