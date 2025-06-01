@@ -29,7 +29,7 @@ Visit the [live demo](https://securitygeek15.github.io/METAVISION/) to try ExifG
 ### Local Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/securitygeek/exifgeek.git
+   git clone https://github.com/securitygeek15/exifgeek.git
    ```
 2. Navigate to the project directory:
    ```bash
