@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaVision - Advanced Image Analysis</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fas fa-camera-retro"></i>
+                <span>MetaVision</span>
+            </div>
+            <div class="nav-items">
+                <div class="nav-group">
+                    <button class="nav-item active" data-view="extract">
+                        <i class="fas fa-file-import"></i>
+                        <span>Extract</span>
+                        <i class="fas fa-chevron-down dropdown-icon"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <button class="dropdown-item" data-action="upload">
+                            <i class="fas fa-upload"></i>
+                            Upload Image
+                        </button>
+                        <button class="dropdown-item" data-action="camera">
+                            <i class="fas fa-camera"></i>
+                            Take Photo
+                        </button>
+                        <button class="dropdown-item" data-action="paste">
+                            <i class="fas fa-paste"></i>
+                            Paste Image
+                        </button>
+                    </div>
+                </div>
+                <div class="nav-group">
+                    <button class="nav-item" data-view="history">
+                        <i class="fas fa-history"></i>
+                        <span>History</span>
+                        <i class="fas fa-chevron-down dropdown-icon"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <button class="dropdown-item" data-action="clear-history">
+                            <i class="fas fa-trash"></i>
+                            Clear History
+                        </button>
+                        <button class="dropdown-item" data-action="export-history">
+                            <i class="fas fa-file-export"></i>
+                            Export History
+                        </button>
+                    </div>
+                </div>
+                <div class="nav-group">
+                    <button class="nav-item" data-view="settings">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                        <i class="fas fa-chevron-down dropdown-icon"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <button class="dropdown-item" data-action="reset-settings">
+                            <i class="fas fa-undo"></i>
+                            Reset Settings
+                        </button>
+                        <button class="dropdown-item" data-action="about">
+                            <i class="fas fa-info-circle"></i>
+                            About
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <div class="view-container" id="extract-view">
+                <div class="upload-container">
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-content">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <h3>Drop your image here</h3>
+                            <p>or click to browse</p>
+                            <input type="file" id="fileInput" accept="image/*" hidden>
+                        </div>
+                        <div class="upload-progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analysis-container">
+                    <div class="image-preview-container">
+                        <div class="image-preview" id="imagePreview"></div>
+                        <div class="image-info">
+                            <div class="info-item">
+                                <span class="label">Dimensions</span>
+                                <span class="value" id="dimensions">-</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Size</span>
+                                <span class="value" id="fileSize">-</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Type</span>
+                                <span class="value" id="fileType">-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metadata-container">
+                        <div class="metadata-header">
+                            <h2>Image Analysis</h2>
+                            <div class="metadata-actions">
+                                <button class="action-btn" id="exportBtn">
+                                    <i class="fas fa-download"></i>
+                                    Export
+                                </button>
+                                <button class="action-btn" id="clearBtn">
+                                    <i class="fas fa-trash"></i>
+                                    Clear
+                                </button>
+                            </div>
+                        </div>
+                        <div class="analysis-tabs">
+                            <button class="analysis-tab active" data-tab="metadata">
+                                <i class="fas fa-info-circle"></i>
+                                Metadata
+                            </button>
+                            <button class="analysis-tab" data-tab="colors">
+                                <i class="fas fa-palette"></i>
+                                Colors
+                            </button>
+                            <button class="analysis-tab" data-tab="faces">
+                                <i class="fas fa-user-friends"></i>
+                                Faces
+                            </button>
+                            <button class="analysis-tab" data-tab="quality">
+                                <i class="fas fa-chart-line"></i>
+                                Quality
+                            </button>
+                        </div>
+                        <div class="analysis-panels">
+                            <div class="analysis-panel active" id="metadata-panel">
+                                <div class="metadata-grid" id="metadataGrid">
+                                    <div class="empty-state">
+                                        <i class="fas fa-image"></i>
+                                        <p>Upload an image to begin analysis</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="analysis-panel" id="colors-panel">
+                                <div class="color-analysis">
+                                    <h3>Dominant Colors</h3>
+                                    <div class="color-palette" id="colorPalette"></div>
+                                </div>
+                            </div>
+                            <div class="analysis-panel" id="faces-panel">
+                                <div class="face-detection" id="faceDetectionResults">
+                                    <div class="empty-state">
+                                        <i class="fas fa-user-friends"></i>
+                                        <p>No faces detected</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="analysis-panel" id="quality-panel">
+                                <div class="quality-analysis" id="qualityMetrics">
+                                    <div class="empty-state">
+                                        <i class="fas fa-chart-line"></i>
+                                        <p>Upload an image to analyze quality</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="view-container hidden" id="history-view">
+                <div class="history-container">
+                    <div class="history-header">
+                        <h2>Analysis History</h2>
+                        <div class="history-actions">
+                            <button class="action-btn" onclick="exportHistory()">
+                                <i class="fas fa-file-export"></i>
+                                Export All
+                            </button>
+                            <button class="action-btn delete" onclick="clearHistory()">
+                                <i class="fas fa-trash"></i>
+                                Clear All
+                            </button>
+                        </div>
+                    </div>
+                    <div class="history-filters">
+                        <div class="filter-group">
+                            <label for="sortBy">Sort by:</label>
+                            <select id="sortBy" onchange="updateHistoryView()">
+                                <option value="newest">Newest First</option>
+                                <option value="oldest">Oldest First</option>
+                                <option value="name">File Name</option>
+                                <option value="size">File Size</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filterType">File Type:</label>
+                            <select id="filterType" onchange="updateHistoryView()">
+                                <option value="all">All Types</option>
+                                <option value="image/jpeg">JPEG</option>
+                                <option value="image/png">PNG</option>
+                                <option value="image/gif">GIF</option>
+                                <option value="image/webp">WebP</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="searchHistory">Search:</label>
+                            <input type="text" id="searchHistory" placeholder="Search files..." oninput="updateHistoryView()">
+                        </div>
+                    </div>
+                    <div class="history-list" id="historyList">
+                        <!-- History items will be added here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="view-container hidden" id="settings-view">
+                <div class="settings-container">
+                    <h2>Settings</h2>
+                    <div class="settings-group">
+                        <h3>Display Options</h3>
+                        <div class="setting-item">
+                            <label for="themeSelect">Theme</label>
+                            <select id="themeSelect" class="settings-input">
+                                <option value="light">Light</option>
+                                <option value="dark">Dark</option>
+                                <option value="red">Red</option>
+                                <option value="dark-red">Dark Red</option>
+                            </select>
+                        </div>
+                        <div class="setting-item">
+                            <label>Animation Speed</label>
+                            <select id="animationSpeed">
+                                <option value="fast">Fast</option>
+                                <option value="normal" selected>Normal</option>
+                                <option value="slow">Slow</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
