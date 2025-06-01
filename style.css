@@ -101,6 +101,11 @@ body {
     position: relative;
 }
 
+.more-menu .nav-item {
+    width: 100%;
+    justify-content: center;
+}
+
 .more-menu .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -503,8 +508,16 @@ body {
     
     .nav-items {
         flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+        justify-content: flex-end;
+    }
+    
+    .more-menu .nav-item {
+        width: auto;
+    }
+    
+    .more-menu .dropdown-menu {
+        right: 0;
+        left: auto;
     }
     
     .main-content {
@@ -531,11 +544,6 @@ body {
 
     .metric-item {
         padding: 1rem;
-    }
-
-    .more-menu .dropdown-menu {
-        right: 0;
-        left: auto;
     }
 }
 
