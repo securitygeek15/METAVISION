@@ -24,12 +24,12 @@ ExifGeek is a powerful web-based image analysis tool that provides detailed meta
 ## 🚀 Getting Started
 
 ### Live Demo
-Visit the [live demo](https://securitygeek15.github.io/METAVISION/) to try ExifGeek online.
+Visit the [live demo](https://securitygeek.github.io/exifgeek) to try ExifGeek online.
 
 ### Local Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/securitygeek15/exifgeek.git
+   git clone https://github.com/securitygeek/exifgeek.git
    ```
 2. Navigate to the project directory:
    ```bash
